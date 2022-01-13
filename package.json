@@ -1,0 +1,28 @@
+{
+  "name": "mern-auth-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamArnab01/mern-auth-backend.git"
+  },
+  "author": "Arnab Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IamArnab01/mern-auth-backend/issues"
+  },
+  "homepage": "https://github.com/IamArnab01/mern-auth-backend#readme",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
