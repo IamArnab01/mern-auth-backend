@@ -1,7 +1,11 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
-
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 const User = require("../models/user");
+
+// dotenv config
+dotenv.config();
 
 router.post("/register", async (req, res) => {
   // hashing the password
@@ -37,7 +41,12 @@ router.post("/login", async (req, res) => {
   if (!isPassValid) {
     return res.status(400).send("Invalid password.");
   }
-  res.status(200).send(user);
+  // generating jwt token adding to auth header
+  const token = jwt.sign(
+    { _id: user._id, email: user.email },
+    process.env.JWT_SECRET_TOKEN
+  );
+  res.header("jwtToken", token).send({ token: token, usre: user });
 });
 
 module.exports = router;
