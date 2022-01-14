@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
-const postRoutes = require("./routes/profile");
+const profileRoutes = require("./routes/profile");
 
 // spinnig the express app
 const app = express();
@@ -22,6 +22,6 @@ app.use(cors());
 app.use(express.json());
 // route middlewares
 app.use("/api", authRoutes);
-app.use("/api", postRoutes);
+app.use("/api", profileRoutes);
 
-app.listen(3000, () => console.log("App Runnig on port 3000"));
+app.listen(5000, () => console.log("App Runnig on port 5000"));
